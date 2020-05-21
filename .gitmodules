@@ -1,0 +1,12 @@
+[submodule "jat_frontend"]
+	path = jat_frontend
+	url = git@github.com:RutenkolkC/jat_frontend.git
+[submodule "jat_clojure_middleware"]
+	path = jat_clojure_middleware
+	url = git@github.com:RutenkolkC/jat_clojure_middleware.git
+[submodule "jat_analyzer"]
+	path = jat_analyzer
+	url = git@github.com:RutenkolkC/jat_analyzer.git
+[submodule "jat_refactor"]
+	path = jat_refactor
+	url = git@github.com:RutenkolkC/jat_refactor.git

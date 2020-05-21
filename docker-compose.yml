@@ -1,0 +1,39 @@
+version: "3.3"
+services:
+  analyzer:
+    build:
+      context: ./jat_analyzer
+    user: root
+    ports:
+        - "8079:8079"
+        - "7687:7687"
+        - "7474:7474"
+        - "7575:7575"
+    volumes:
+       - ./jat_data:/tmp/jat
+  controller:
+    build:
+      context: ./jat_clojure_middleware
+    ports:
+        - "8081:8081"
+    volumes:
+       - ./jat_data:/tmp/jat
+  frontend:
+    build:
+      context: ./jat_frontend
+    ports:
+        - "8082:8082"
+  glue:
+    build:
+      context: ./jat_frontend
+      dockerfile: Dockerglue
+    ports:
+        - "8080:8080"
+  refactor:
+    build:
+      context: ./jat_refactor
+    user: root
+    ports:
+        - "8078:8078"
+    volumes:
+       - ./jat_data:/tmp/jat
